@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inglês · Unidade 3 — Pretty Matters | Aula Completa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#23201c;
+  --ink-soft:#4a443c;
+  --paper:#f6f1e7;
+  --paper-2:#fffdf8;
+  --teal:#0c5b54;
+  --teal-d:#073f3a;
+  --rose:#c14a63;
+  --rose-soft:#f3d9dd;
+  --gold:#b8893b;
+  --line:#ddd2bd;
+  --shadow:0 18px 50px -22px rgba(35,32,28,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Newsreader',Georgia,serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:18px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+/* ---------- PROGRESS BAR ---------- */
+#progress{
+  position:fixed;top:0;left:0;height:4px;width:0%;
+  background:linear-gradient(90deg,var(--teal),var(--rose),var(--gold));
+  z-index:200;transition:width .12s ease-out;
+}
+/* ---------- NAV ---------- */
+nav{
+  position:sticky;top:0;z-index:150;
+  background:rgba(7,63,58,.97);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.nav-inner{
+  max-width:1180px;margin:0 auto;
+  display:flex;align-items:center;gap:6px;
+  padding:9px 22px;flex-wrap:wrap;
+}
+.nav-brand{
+  font-family:'Fraunces',serif;font-weight:600;color:var(--paper-2);
+  font-size:1.05rem;margin-right:auto;letter-spacing:.3px;
+}
+.nav-brand span{color:var(--gold)}
+nav a{
+  color:#d8e9e6;text-decoration:none;font-size:.86rem;
+  font-family:'DM Mono',monospace;letter-spacing:.2px;
+  padding:6px 11px;border-radius:7px;transition:.18s;white-space:nowrap;
+}
+nav a:hover{background:rgba(255,255,255,.12);color:#fff}
+nav a.active{background:var(--rose);color:#fff}
+/* ---------- LAYOUT ---------- */
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+section{padding:64px 0;border-bottom:1px dashed var(--line)}
+section:last-of-type{border-bottom:none}
+/* ---------- HERO ---------- */
+.hero{
+  background:
+   radial-gradient(ellipse at 78% 18%,rgba(193,74,99,.34),transparent 55%),
+   radial-gradient(ellipse at 12% 88%,rgba(184,137,59,.28),transparent 50%),
+   linear-gradient(160deg,var(--teal-d),var(--teal));
+  color:var(--paper-2);
+  padding:84px 24px 76px;text-align:center;
+  border-bottom:none;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:22px 22px;pointer-events:none;
+}
+.hero .kicker{
+  font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:18px;
+}
+.hero h1{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:clamp(2.5rem,7vw,4.4rem);line-height:1.04;
+  letter-spacing:-1px;margin-bottom:8px;
+}
+.hero h1 em{font-style:italic;color:#f0c9cf}
+.hero .sub{
+  font-size:1.18rem;color:#cfe3e0;max-width:560px;margin:14px auto 30px;
+}
+.hero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative}
+.hero-tags span{
+  font-family:'DM Mono',monospace;font-size:.78rem;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
+  padding:7px 13px;border-radius:30px;color:#eafffb;
+}
+/* ---------- HEADINGS ---------- */
+.sec-num{
+  font-family:'DM Mono',monospace;color:var(--rose);
+  font-size:.92rem;letter-spacing:2px;display:block;margin-bottom:6px;
+}
+h2{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.1;
+  color:var(--teal-d);letter-spacing:-.5px;margin-bottom:6px;
+}
+h3{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.42rem;
+  color:var(--ink);margin:34px 0 12px;
+}
+h4{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;
+  color:var(--teal-d);margin:22px 0 8px;
+}
+p{margin:12px 0}
+.lead{font-size:1.12rem;color:var(--ink-soft);font-style:italic;margin-bottom:8px}
+strong{font-weight:600;color:var(--ink)}
+em.en{font-style:italic;color:var(--teal-d)}
+ul,ol{margin:12px 0 12px 26px}
+li{margin:7px 0}
+a.inline{color:var(--rose);text-decoration:underline}
+/* ---------- CALLOUT BOXES ---------- */
+.box{
+  border-radius:14px;padding:20px 22px;margin:22px 0;
+  border:1px solid var(--line);background:var(--paper-2);
+  box-shadow:0 6px 20px -16px rgba(35,32,28,.5);
+}
+.box .box-title{
+  font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:1.5px;
+  text-transform:uppercase;font-weight:500;margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.box .box-title::before{font-size:1.05rem}
+.box.key{background:#eaf4f2;border-color:#b9d8d2}
+.box.key .box-title{color:var(--teal)}
+.box.key .box-title::before{content:"🔑"}
+.box.trap{background:#fbe9ec;border-color:#e6c0c8}
+.box.trap .box-title{color:var(--rose)}
+.box.trap .box-title::before{content:"⚠️"}
+.box.exam{background:#fbf1dd;border-color:#e6cf9d}
+.box.exam .box-title{color:var(--gold)}
+.box.exam .box-title::before{content:"🎯"}
+.box.add{background:#eef0ec;border-color:#cdd2c4;border-left:4px solid var(--gold)}
+.box.add .box-title{color:#7d6a3b}
+.box.add .box-title::before{content:"➕"}
+.box.tip{background:#e9eff4;border-color:#bccdd9}
+.box.tip .box-title{color:#345b78}
+.box.tip .box-title::before{content:"💡"}
+/* ---------- FORMULA / STRUCTURE BOX ---------- */
+.formula{
+  font-family:'DM Mono',monospace;background:var(--teal-d);color:#eafffb;
+  border-radius:12px;padding:18px 20px;margin:18px 0;font-size:.98rem;
+  line-height:1.85;text-align:center;letter-spacing:.4px;
+  box-shadow:var(--shadow);
+}
+.formula b{color:var(--gold);font-weight:500}
+.formula .pp{color:#f0a9b6}
+/* ---------- TABLES ---------- */
+.tbl-wrap{overflow-x:auto;margin:22px 0;border-radius:12px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:var(--paper-2);font-size:.96rem}
+th{
+  background:var(--teal);color:#fff;font-family:'Fraunces',serif;
+  font-weight:600;text-align:left;padding:11px 14px;font-size:.95rem;
+}
+td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#fbf7ee}
+td code,th code{font-family:'DM Mono',monospace;font-size:.86em}
+/* ---------- EXERCISE ---------- */
+.ex{
+  background:var(--paper-2);border:1px solid var(--line);
+  border-radius:13px;padding:18px 20px;margin:16px 0;
+}
+.ex .q{margin:8px 0}
+.ex .q b{color:var(--teal-d)}
+details{
+  margin-top:10px;border-top:1px dashed var(--line);padding-top:8px;
+}
+details summary{
+  cursor:pointer;font-family:'DM Mono',monospace;font-size:.82rem;
+  color:var(--rose);list-style:none;padding:5px 0;user-select:none;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸ ";font-weight:bold}
+details[open] summary::before{content:"▾ "}
+details .ans{
+  background:#eaf4f2;border-left:3px solid var(--teal);
+  padding:11px 15px;border-radius:7px;margin-top:8px;font-size:.97rem;
+}
+details .ans b{color:var(--teal-d)}
+.correct{color:var(--teal);font-weight:600}
+.wrong{color:var(--rose);text-decoration:line-through}
+/* ---------- VIDEO BUTTONS ---------- */
+.videos{margin:18px 0}
+.vbtn{
+  display:flex;align-items:center;gap:14px;text-decoration:none;
+  background:var(--paper-2);border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;margin:10px 0;transition:.18s;
+}
+.vbtn:hover{transform:translateX(4px);border-color:var(--rose);box-shadow:var(--shadow)}
+.vbtn .yt{
+  background:#cc1f1f;color:#fff;font-family:'DM Mono',monospace;
+  font-size:.72rem;font-weight:600;padding:7px 9px;border-radius:6px;
+  flex-shrink:0;letter-spacing:.5px;
+}
+.vbtn .vtxt{display:flex;flex-direction:column;line-height:1.3}
+.vbtn .vtxt b{color:var(--ink);font-family:'Fraunces',serif;font-size:1rem}
+.vbtn .vtxt small{color:var(--ink-soft);font-size:.82rem}
+.vbtn .go{margin-left:auto;color:var(--rose);font-size:1.3rem;flex-shrink:0}
+/* ---------- ARROW DIAGRAM ---------- */
+.diagram{
+  font-family:'DM Mono',monospace;background:#eaf4f2;border:1px solid #b9d8d2;
+  border-radius:11px;padding:16px 18px;margin:18px 0;font-size:.9rem;
+  line-height:2;overflow-x:auto;white-space:pre;color:var(--teal-d);
+}
+/* ---------- VOCAB CARD ---------- */
+.vcard{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:12px;
+  padding:15px 18px;margin:12px 0;border-left:4px solid var(--rose);
+}
+.vcard .term{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;color:var(--teal-d)}
+.vcard .pho{font-family:'DM Mono',monospace;font-size:.82rem;color:var(--gold)}
+.vcard .def{margin:4px 0}
+.vcard .ex-s{font-style:italic;color:var(--ink-soft);font-size:.96rem}
+/* ---------- DICT ENTRY ---------- */
+.dict{
+  background:#fffdf8;border:2px solid var(--teal);border-radius:12px;
+  padding:18px 20px;margin:20px 0;
+}
+.dict .dline{margin:7px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.dict .label{
+  font-family:'DM Mono',monospace;font-size:.7rem;background:var(--rose);
+  color:#fff;padding:3px 8px;border-radius:20px;letter-spacing:.5px;
+}
+/* ---------- FOOTER ---------- */
+footer{
+  background:var(--teal-d);color:#bcd6d2;text-align:center;
+  padding:40px 24px;font-size:.9rem;
+}
+footer b{color:var(--gold)}
+/* ---------- BACK TO TOP ---------- */
+#top{
+  position:fixed;right:22px;bottom:22px;z-index:120;
+  background:var(--rose);color:#fff;border:none;cursor:pointer;
+  width:46px;height:46px;border-radius:50%;font-size:1.2rem;
+  box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;
+}
+#top.show{opacity:1;pointer-events:auto}
+.divider-quote{
+  font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;
+  color:var(--teal);text-align:center;margin:30px 0;padding:0 20px;
+}
+.mini-toc{
+  background:var(--paper-2);border:1px dashed var(--teal);border-radius:12px;
+  padding:16px 20px;margin:20px 0;
+}
+.mini-toc b{font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:1px;color:var(--teal)}
+.mini-toc ol{margin:8px 0 0 22px}
+.mini-toc a{color:var(--ink-soft);text-decoration:none}
+.mini-toc a:hover{color:var(--rose)}
+@media(max-width:620px){
+  body{font-size:16.5px}
+  .wrap{padding:0 16px}
+  section{padding:46px 0}
+  .nav-brand{font-size:.92rem}
+  nav a{font-size:.74rem;padding:5px 7px}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">Unit 3 · <span>Pretty Matters</span></div>
+    <a href="#reading">Reading</a>
+    <a href="#vocabulary">Vocabulary</a>
+    <a href="#connectors">Connectors</a>
+    <a href="#modals">Modal Perfects</a>
+    <a href="#tenses">Past Perfect</a>
+    <a href="#study">Study Skills</a>
+    <a href="#revisao">Revisão</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="inicio">
+  <div class="kicker">English · Ensino Médio · Vestibular &amp; ENEM</div>
+  <h1>Unidade 3<br><em>Pretty Matters</em></h1>
+  <p class="sub">Aula completa de inglês: leitura crítica, vocabulário, conectores de propósito, modal perfects e past perfect — do zero ao avançado.</p>
+  <div class="hero-tags">
+    <span>Reading Comprehension</span>
+    <span>Vocabulary U3</span>
+    <span>Conjunctions of Purpose</span>
+    <span>Modal Perfects</span>
+    <span>Past Perfect</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- visão geral -->
+<section id="visao">
+  <span class="sec-num">// VISÃO GERAL DA UNIDADE</span>
+  <h2>O que esta unidade ensina</h2>
+  <p class="lead">A Unidade 3 gira em torno de um único grande tema: <em>como a sociedade constrói a ideia de beleza</em> — e como a língua inglesa é usada para discutir esse tema.</p>
+  <p>Tudo na unidade conversa entre si. O texto de leitura (sobre o fotógrafo Rick Guidotti e o albinismo) levanta a pergunta central: <strong>a beleza é uma construção individual ou social?</strong> O vocabulário traz expressões para falar de aparência. E os três tópicos de gramática aparecem porque são exatamente as estruturas que você precisa para discutir <em>intenções</em>, <em>deduções sobre o passado</em> e <em>a ordem dos acontecimentos</em>.</p>
+
+  <div class="mini-toc">
+    <b>ROTEIRO DA AULA</b>
+    <ol>
+      <li><a href="#reading">Reading Comprehension</a> — o texto, "Learning from Context" e "Separating Fact from Opinion".</li>
+      <li><a href="#vocabulary">Vocabulary U3</a> — expressões sobre aparência e o conceito de beleza.</li>
+      <li><a href="#connectors">Connectors</a> — Conjunctions of Purpose (conectores de propósito/finalidade).</li>
+      <li><a href="#modals">Modal Verbs</a> — Modal Perfects (verbos modais no passado).</li>
+      <li><a href="#tenses">Verb Tenses</a> — Past Perfect (o "passado do passado").</li>
+      <li><a href="#study">Study Skills</a> — como usar dicionários monolíngues.</li>
+      <li><a href="#revisao">Revisão final &amp; autoteste</a>.</li>
+    </ol>
+  </div>
+
+  <div class="box add">
+    <div class="box-title">Complemento para melhor compreensão</div>
+    Você pediu também o <strong>"Vocabulary U3 Std's + WB"</strong> (Student's Book + Workbook). As fotos enviadas correspondem às páginas 32–38 do <em>Student's Book</em>. Esta aula esgota <strong>todo o vocabulário presente nessas páginas</strong>. Se você enviar depois as páginas do <em>Workbook</em>, dá para ampliar a seção de vocabulário com as listas e exercícios extras de lá.
+  </div>
+</section>
+
+<!-- ===================== READING ===================== -->
+<section id="reading">
+  <span class="sec-num">// PARTE 1 — READING COMPREHENSION</span>
+  <h2>Reading Comprehension</h2>
+  <p class="lead">"Fashion Photographer's Life Changed by Chance Encounter" — by Ryan Fritzsche (July 10, 2015)</p>
+
+  <h3>1.1 — Visão geral do texto</h3>
+  <p>O texto é uma <strong>reportagem biográfica</strong> (gênero <em>article</em>) sobre <strong>Rick Guidotti</strong>, um fotógrafo de moda americano. A reportagem narra como um encontro casual mudou completamente a carreira dele. É um texto narrativo-argumentativo: conta uma história <em>para defender uma tese</em> — a de que a beleza existe na diversidade, e não apenas nos padrões da indústria da moda.</p>
+
+  <div class="box key">
+    <div class="box-title">Conceito-chave do texto</div>
+    O termo <em class="en">albinism</em> (albinismo) é uma condição genética caracterizada pela <strong>ausência ou redução de pigmentação</strong> (melanina) na pele, nos cabelos e nos olhos. No texto, o albinismo funciona como símbolo de toda forma de beleza que <em>não cabe no "molde" padrão</em>.
+  </div>
+
+  <h3>1.2 — A história, passo a passo</h3>
+  <div class="diagram">ANTES                          O ENCONTRO                    DEPOIS
+─────────────                  ─────────────                 ─────────────
+Fotógrafo de moda     ──▶      Vê de relance uma     ──▶     Pesquisa albinismo
+de sucesso nos anos            jovem pálida na                em livros de medicina
+1990 (Claudia Schiffer,        parada de ônibus               → fica CHOCADO com as
+Cindy Crawford).               (Park Avenue).                   imagens desumanizantes.
+Frustrado com os                                                       │
+padrões estreitos                                                      ▼
+de beleza.                                              Decide fotografar a beleza
+                                                        e o lado humano do albinismo.
+                                                                       │
+                                                                       ▼
+                                              Procura a NOAH (organização de apoio).
+                                              Resistência inicial → ganha a confiança.
+                                                                       │
+                                                                       ▼
+                                              Fotografa Christine (1ª modelo).
+                                              "Christine, look at yourself.
+                                               You are magnificent!"
+                                                                       │
+                                                                       ▼
+                                              Capa da revista LIFE → carreira
+                                              global de ativismo "até hoje".</div>
+
+  <p>Pontos centrais que a reportagem destaca:</p>
+  <ul>
+    <li><strong>O contraste de imagens.</strong> Nos livros de medicina, pessoas com albinismo apareciam <em>nuas, contra a parede, com tarjas pretas sobre os olhos</em> — como <em>"imagens de doenças, não de pessoas"</em>. Rick quis criar o oposto: imagens de <em>pessoas</em>.</li>
+    <li><strong>A transformação de Christine.</strong> Ela chegou ao estúdio cabisbaixa, ombros encolhidos, evitando contato visual, com autoestima zero por causa do <em>bullying</em> na escola. Rick a fotografou com o mesmo estilo que usava com Cindy Crawford e ergueu um espelho diante dela.</li>
+    <li><strong>A tese final.</strong> Rick afirma que <em>nunca fotografou uma "doença genética"</em> — fotografou pessoas. "This is about humanity."</li>
+  </ul>
+
+  <h3>1.3 — Before Reading (Exercício 1)</h3>
+  <div class="ex">
+    <p class="q"><b>Pergunta:</b> As imagens <em>a</em> e <em>b</em> foram publicadas, respectivamente, em um artigo sobre <em>violência e preconceito contra crianças albinas</em> e em um <em>ensaio fotográfico artístico</em> de campanha. Quais diferenças você nota no modo como as duas meninas são retratadas? Qual imagem ilustraria melhor o texto?</p>
+    <details>
+      <summary>Ver resposta e explicação</summary>
+      <div class="ans">
+        <p><b>Imagem a</b> — retrato sério, sombrio, em ambiente fechado: transmite <em>vulnerabilidade e sofrimento</em>. <b>Imagem b</b> — a menina aparece em movimento, ao ar livre, cheia de energia e alegria: transmite <em>liberdade, beleza e celebração</em>.</p>
+        <p>A imagem que <b>melhor ilustraria o texto é a imagem b</b>, porque o trabalho de Rick Guidotti tem exatamente o objetivo de mostrar o <em>lado belo e humano</em> das pessoas com albinismo — e não o lado clínico ou de vítima.</p>
+      </div>
+    </details>
+  </div>
+
+  <h3>1.4 — Learning from Context (Exercício 2)</h3>
+  <p>Esta é uma das habilidades <strong>mais cobradas em vestibular</strong>: <em>deduzir o significado de uma palavra pelo contexto</em>, sem precisar do dicionário. Veja as expressões do texto e suas definições.</p>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Expressão</th><th>Significado (definição em inglês)</th><th>Tradução</th></tr>
+    <tr><td><code>to catch a glimpse of</code></td><td>to see somebody or something for a short moment</td><td>ver de relance / dar uma olhada rápida</td></tr>
+    <tr><td><code>to catch up to</code></td><td>to reach after coming from behind</td><td>alcançar (vindo de trás)</td></tr>
+    <tr><td><code>to peruse</code></td><td>to read or examine something carefully and in detail</td><td>ler/examinar com atenção</td></tr>
+    <tr><td><code>to pour in</code></td><td>to arrive continuously and in large numbers</td><td>chegar em grande quantidade</td></tr>
+    <tr><td><code>to set in motion</code></td><td>to start a process</td><td>colocar em andamento / dar início</td></tr>
+  </table>
+  </div>
+  <div class="box trap">
+    <div class="box-title">Pegadinha de prova</div>
+    No exercício 2 do livro, são dadas <strong>5 palavras</strong> mas só <strong>4 definições</strong> — uma palavra fica "sobrando" e você deve <em>deduzir o sentido dela</em>. A palavra deixada para deduzir é <code>peruse</code>. Não confunda <em>peruse</em> ("ler com atenção") com "browse" ("folhear rapidamente") — são quase opostos! No texto, Rick <em>perusing medical textbooks</em> significa que ele estudou os livros <em>a fundo</em>.
+  </div>
+
+  <h3>1.5 — Developing Reading Skills: Separating Fact from Opinion</h3>
+  <p>O texto da página 33 ensina a <strong>distinguir fato de opinião</strong> — habilidade essencial para a leitura crítica e altamente cobrada no ENEM.</p>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>FACT (fato)</th><th>OPINION (opinião)</th></tr>
+    <tr>
+      <td>Afirmação objetiva que pode ser <strong>provada</strong> verdadeira ou falsa. É <em>informativa</em>.<br><b>Pistas:</b> nomes, estatísticas, lugares e datas.</td>
+      <td>Expõe o <strong>ponto de vista</strong> de alguém: julga, critica ou expressa sentimentos. É <em>avaliativa</em>.<br><b>Pistas:</b> adjetivos, modais, advérbios e expressões como <em>"in my opinion"</em>, <em>"it seems to me that"</em>, <em>"to my mind"</em>.</td>
+    </tr>
+  </table>
+  </div>
+  <div class="box tip">
+    <div class="box-title">Dica de leitura crítica</div>
+    Imagens, títulos e legendas também ajudam a distinguir fato de opinião — porque podem <em>ou não</em> sustentar o que o texto diz. A mesma foto de uma pessoa albina pode ilustrar um texto que defende a <em>beleza na diversidade</em> ou um texto que trata o albinismo como <em>doença</em>. O contexto define a leitura.
+  </div>
+
+  <h4>Exercício 3 — Fato (F) ou Opinião (O)?</h4>
+  <div class="ex">
+    <p class="q"><b>1.</b> "As an in-demand fashion photographer in the 1990s, he routinely shot supermodels like Claudia Schiffer and Cindy Crawford." (linhas 1–3)</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>F (Fato).</b> Há <em>data</em> ("the 1990s") e <em>nomes próprios</em> (Claudia Schiffer, Cindy Crawford). É uma informação verificável.</div></details>
+    <p class="q"><b>2.</b> "As an artist, I didn't only see beauty on the covers of magazines. I saw beauty everywhere." (linhas 8–9)</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>O (Opinião).</b> "I saw beauty everywhere" expressa uma <em>percepção pessoal</em> de Rick sobre o que é belo. Beleza é avaliativa.</div></details>
+    <p class="q"><b>3.</b> "Rick decided he wanted to shoot photos that showed the beautiful and human side of people with albinism." (linhas 32–33)</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>F (Fato).</b> A frase <em>relata uma decisão real</em> que ele tomou — um acontecimento verificável na narrativa. <em>Atenção:</em> o adjetivo "beautiful" descreve o <em>conteúdo das fotos</em>, não é um julgamento do repórter; por isso a frase é classificada como fato.</div></details>
+    <p class="q"><b>4.</b> "That's when I realized how powerful the camera was as a medium, to present self-esteem, to present self-acceptance, and to see beauty." (linhas 66–71)</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>O (Opinião).</b> "I realized how powerful..." é uma <em>reflexão pessoal</em>, uma avaliação subjetiva do próprio Rick.</div></details>
+  </div>
+
+  <h4>Exercício 4 — Qual comparação é estabelecida no texto?</h4>
+  <div class="ex">
+    <p class="q"><b>Pergunta:</b> Que comparação é estabelecida entre as visões sobre o albinismo retratadas no texto?</p>
+    <details>
+      <summary>Ver resposta e explicação</summary>
+      <div class="ans">
+        <p>Alternativa <b class="correct">d</b>: <em>"In clinical photos, albino people serve as 'objects of study' of albinism as a disease, while Guidotti's series captured the beauty in them."</em></p>
+        <p>O texto contrasta <strong>dois olhares</strong>: as fotos clínicas dos livros de medicina (a pessoa como <em>objeto de estudo de uma doença</em>) × as fotos de Guidotti (a pessoa como <em>ser humano belo</em>).</p>
+        <p><b>Por que as outras estão erradas:</b> <span class="wrong">a</span> e <span class="wrong">b</span> afirmam que as revistas de moda retratavam o albinismo — falso, elas nunca o faziam; <span class="wrong">c</span> contraria a tese central do texto.</p>
+      </div>
+    </details>
+  </div>
+
+  <h4>Exercício 5 — Verdadeiro (T) ou Falso (F)?</h4>
+  <div class="ex">
+    <p class="q"><b>1.</b> "The photographer's view of beauty changed after he saw a beautiful girl with albinism waiting for the bus."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>F (Falso).</b> O texto diz que Rick <em>já</em> via beleza em tudo ("I saw beauty everywhere"). O que mudou não foi a <em>visão de beleza</em> dele, mas o <strong>rumo da vida e da carreira</strong>. Trecho que corrige: <em>"that glimpse forever altered the course of his life and career."</em></div></details>
+    <p class="q"><b>2.</b> "The first girl Guidotti photographed in his partnership with NOAH was not comfortable with the camera in the beginning."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>T (Verdadeiro).</b> Christine chegou <em>"with her head down, shoulders hunched, avoiding eye contact"</em>, com autoestima zero.</div></details>
+    <p class="q"><b>3.</b> "Guidotti used different strategies in Christine and Cindy Crawford's photo shoots."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>F (Falso).</b> Ele usou a <em>mesma</em> estratégia. Trecho que corrige: <em>"he decided to shoot her with the same style and approach he had used with Cindy Crawford."</em></div></details>
+    <p class="q"><b>4.</b> "Guidotti's initiative to photograph people with genetic conditions was meant to show how beauty can be seen in unconventional situations."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>T (Verdadeiro).</b> A iniciativa dele era justamente <em>mostrar a beleza e o lado humano</em>, contrariando os retratos clínicos e negativos.</div></details>
+    <p class="q"><b>5.</b> "Rick still advocates a new way of portraying people with albinism."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>T (Verdadeiro).</b> O texto fala de <em>"a globetrotting advocacy for people with albinism that continues to this day."</em></div></details>
+  </div>
+
+  <div class="box exam">
+    <div class="box-title">O que mais cai em prova (Reading)</div>
+    <ul>
+      <li><strong>Inferência de vocabulário pelo contexto</strong> — exatamente o que o exercício 2 treina. ENEM e FUVEST adoram.</li>
+      <li><strong>Fato × Opinião</strong> — saber identificar marcadores de opinião (adjetivos avaliativos, modais, "I think", "it seems").</li>
+      <li><strong>Tese / propósito do autor</strong> — "qual é a intenção do texto?" A resposta certa raramente é a literal; é a que capta a <em>mensagem</em>.</li>
+      <li><strong>Correção de afirmação falsa</strong> — quando a banda pede para corrigir, a resposta tem que <em>citar o trecho exato</em> do texto.</li>
+    </ul>
+  </div>
+
+  <div class="videos">
+    <h4>🎬 Vídeos recomendados — Interpretação de Texto em Inglês</h4>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=jBkRAG8L12o" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Inglês no Enem: como interpretar textos</b><small>Canal English in Brazil (Carina Fragozo) — estratégias de leitura</small></span>
+      <span class="go">↗</span>
+    </a>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=0oNeqpLPJjU" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Ganhe tempo na interpretação de texto</b><small>Resumo de Inglês para o Enem — técnicas de skimming e scanning</small></span>
+      <span class="go">↗</span>
+    </a>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=0yWn_Zn7rcA" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Inferência e Leitura Crítica em Inglês</b><small>Curso Enem Gratuito — leitura crítica e fato × opinião</small></span>
+      <span class="go">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== VOCABULARY ===================== -->
+<section id="vocabulary">
+  <span class="sec-num">// PARTE 2 — VOCABULARY (UNIT 3)</span>
+  <h2>Vocabulary — Unidade 3</h2>
+  <p class="lead">Todo o vocabulário das páginas 32–34: expressões do texto, expressões para falar de aparência e o vocabulário sobre o conceito de beleza.</p>
+
+  <h3>2.1 — Learning from Context (revisão das 5 expressões)</h3>
+  <p>Já vimos essas expressões na Parte 1. Repassando rapidamente, com exemplos novos:</p>
+  <div class="vcard">
+    <div class="term">to catch a glimpse of</div>
+    <div class="def">ver algo/alguém por um instante, de relance.</div>
+    <div class="ex-s">"From the train, I caught a glimpse of the ocean."</div>
+  </div>
+  <div class="vcard">
+    <div class="term">to catch up to / to catch up with</div>
+    <div class="def">alcançar alguém ou algo que estava à frente.</div>
+    <div class="ex-s">"Run faster — you need to catch up to the others!"</div>
+  </div>
+  <div class="vcard">
+    <div class="term">to peruse</div>
+    <div class="def">ler ou examinar com cuidado e atenção (não é folhear!).</div>
+    <div class="ex-s">"She perused the contract before signing it."</div>
+  </div>
+  <div class="vcard">
+    <div class="term">to pour in</div>
+    <div class="def">chegar continuamente e em grande quantidade.</div>
+    <div class="ex-s">"After the show, messages began pouring in from fans."</div>
+  </div>
+  <div class="vcard">
+    <div class="term">to set (something) in motion</div>
+    <div class="def">dar início a um processo, colocar algo em movimento.</div>
+    <div class="ex-s">"That meeting set in motion a series of big changes."</div>
+  </div>
+
+  <h3>2.2 — Expressions to Talk About Appearance (Exercício 3, p.34)</h3>
+  <p>Estas são <em>expressões idiomáticas</em> para descrever a aparência das pessoas. Cuidado: o significado <strong>não é literal</strong>.</p>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Expressão</th><th>Definição</th><th>Tradução / uso</th></tr>
+    <tr><td><code>to fit the mold</code></td><td>to look the way that is expected or accepted</td><td>encaixar-se no "molde", seguir o padrão esperado</td></tr>
+    <tr><td><code>(to be) dressed to kill</code></td><td>to wear very glamorous clothes</td><td>estar superbem-vestido(a), arrasando no visual</td></tr>
+    <tr><td><code>(to be) larger than life</code></td><td>to call a lot of attention by appearing to be more exciting than most people</td><td>maior que a vida — uma figura marcante, que chama muita atenção</td></tr>
+    <tr><td><code>(to be) well-built</code></td><td>to look larger and stronger than the average person</td><td>ser forte, "malhado", de corpo robusto</td></tr>
+  </table>
+  </div>
+  <div class="box trap">
+    <div class="box-title">Pegadinha de prova</div>
+    <em>"Larger than life"</em> <strong>não</strong> significa "gordo" nem "literalmente grande". Refere-se a uma personalidade <em>marcante e cativante</em>. E <em>"dressed to kill"</em> nada tem a ver com violência — é "vestido para impressionar". Bancas adoram a interpretação literal como armadilha.
+  </div>
+
+  <h3>2.3 — The Concept of Beauty (Exercício 2, p.34)</h3>
+  <p>Vocabulário do parágrafo-lacuna. Palavras do quadro: <em>beauty, imposed, individual, meet, socially, ugliness</em>. Quatro são usadas:</p>
+  <div class="box key">
+    <div class="box-title">Parágrafo completo</div>
+    "Being a teenager nowadays can be really difficult, especially if you don't <span class="correct">(1) meet</span> the <span class="correct">(2) beauty</span> standards <span class="correct">(3) imposed</span> by the media. This fact may suggest that beauty is anything but an <span class="correct">(4) individual</span> construct, since people are constantly told what they are supposed to look like."
+  </div>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Palavra</th><th>Classe</th><th>Significado</th></tr>
+    <tr><td><code>to meet (standards)</code></td><td>verbo</td><td>atender / corresponder a (padrões)</td></tr>
+    <tr><td><code>beauty</code></td><td>substantivo</td><td>beleza</td></tr>
+    <tr><td><code>imposed</code></td><td>particípio (adj.)</td><td>imposto(s)</td></tr>
+    <tr><td><code>individual</code></td><td>adjetivo</td><td>individual</td></tr>
+    <tr><td><code>ugliness</code></td><td>substantivo</td><td>feiura (palavra <em>não</em> usada no parágrafo)</td></tr>
+    <tr><td><code>socially</code></td><td>advérbio</td><td>socialmente (palavra <em>não</em> usada no parágrafo)</td></tr>
+  </table>
+  </div>
+  <div class="box add">
+    <div class="box-title">Complemento para melhor compreensão</div>
+    Observe o sufixo: <strong>-ness</strong> transforma adjetivo em substantivo abstrato. <em>ugly → ugliness</em> (feio → feiura), assim como <em>happy → happiness</em>, <em>kind → kindness</em>. Já <strong>-ly</strong> transforma adjetivo em advérbio: <em>social → socially</em>. Reconhecer sufixos ajuda muito a deduzir a classe gramatical das palavras em prova.
+  </div>
+
+  <h3>2.4 — Expressão extra do texto de leitura</h3>
+  <p>Da Developing Reading Skills, vale memorizar também:</p>
+  <ul>
+    <li><strong><em>be somebody's type</em></strong> — ser o tipo de pessoa que alguém acha atraente. <em>"He's not really my type."</em></li>
+    <li><strong><em>to be taken aback</em></strong> (aparece nos exercícios) — ficar surpreso, chocado, pego de surpresa. <em>"We were taken aback by the news."</em></li>
+  </ul>
+
+  <h3>2.5 — Match: expressões × definições (Exercício 3 completo)</h3>
+  <div class="ex">
+    <p class="q"><b>1.</b> fit the mold → <span class="correct">to look the way that is expected or accepted</span></p>
+    <p class="q"><b>2.</b> dressed to kill → <span class="correct">to wear very glamorous clothes</span></p>
+    <p class="q"><b>3.</b> larger than life → <span class="correct">to call a lot of attention by appearing to be more exciting than most people</span></p>
+    <p class="q"><b>4.</b> well-built → <span class="correct">to look larger and stronger than the average person</span></p>
+  </div>
+
+  <div class="box exam">
+    <div class="box-title">O que mais cai em prova (Vocabulary)</div>
+    Vestibulares cobram vocabulário quase sempre <em>dentro de um texto</em>: pedem o <strong>sinônimo</strong> de uma palavra grifada ou perguntam o que ela <strong>significa naquele contexto</strong>. Estratégia de ouro: identifique a <em>classe gramatical</em> da palavra (verbo? substantivo? adjetivo?) antes de escolher — isso elimina metade das alternativas.
+  </div>
+
+  <div class="videos">
+    <h4>🎬 Vídeo recomendado — Vocabulário e cognatas</h4>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=WOR5hbFIoSI" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Técnica de Leitura e Vocabulário no Enem</b><small>Brasil Escola — cognatas, palavras-chave e dedução de sentido</small></span>
+      <span class="go">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== CONNECTORS ===================== -->
+<section id="connectors">
+  <span class="sec-num">// PARTE 3 — CONNECTORS</span>
+  <h2>Conjunctions of Purpose</h2>
+  <p class="lead">Conectores de propósito/finalidade — usados para responder à pergunta "<em>com que objetivo?</em>" / "<em>para quê?</em>"</p>
+
+  <h3>3.1 — O que são</h3>
+  <p>As <strong>conjunctions of purpose</strong> introduzem o <strong>objetivo ou a finalidade</strong> de uma ação. Elas ligam a ação à <em>intenção</em> por trás dela.</p>
+  <div class="box key">
+    <div class="box-title">Conceito-chave</div>
+    <p><em>"She has lost weight <strong>to take part</strong> in the competition."</em></p>
+    Aqui, <em>"taking part in the competition"</em> é o <strong>propósito</strong> de <em>"losing weight"</em>. Ela emagreceu <em>com qual objetivo?</em> → participar da competição.
+  </div>
+
+  <h3>3.2 — As estruturas (a forma mais comum: <em>to + infinitivo</em>)</h3>
+  <div class="formula">
+    <b>to</b> + verbo no infinitivo<br>
+    <b>in order to</b> + infinitivo<br>
+    <b>so as to</b> + infinitivo<br>
+    <b>so that</b> + <span class="pp">sujeito + verbo</span>
+  </div>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Conector</th><th>Vem seguido de</th><th>Exemplo</th></tr>
+    <tr><td><code>to</code></td><td>infinitivo</td><td>She has lost weight <b>to take part</b> in the competition.</td></tr>
+    <tr><td><code>in order to</code></td><td>infinitivo</td><td>Fran went on a no-carbs diet <b>in order to lose</b> weight fast.</td></tr>
+    <tr><td><code>so as to</code></td><td>infinitivo</td><td>Our strategies have changed <b>so as to meet</b> our consumers' demands.</td></tr>
+    <tr><td><code>so that</code></td><td><strong>oração</strong> (sujeito + verbo, geralmente com modal)</td><td>The company conducted a survey <b>so that it could</b> get to know its customers better.</td></tr>
+  </table>
+  </div>
+
+  <div class="box trap">
+    <div class="box-title">Pegadinha de prova — a MAIS importante</div>
+    <strong><code>so that</code> exige uma oração completa</strong> (sujeito + verbo); os outros três (<code>to</code>, <code>in order to</code>, <code>so as to</code>) exigem apenas o <strong>infinitivo</strong>.<br>
+    ❌ <span class="wrong">so that feel attractive</span> &nbsp;→&nbsp; ✅ <span class="correct">so that <u>they</u> feel attractive</span><br>
+    ❌ <span class="wrong">in order lose weight</span> &nbsp;→&nbsp; ✅ <span class="correct">in order <u>to</u> lose weight</span>
+  </div>
+
+  <h3>3.3 — A forma negativa</h3>
+  <p>Para negar o propósito (= "para <em>não</em> fazer algo"), a partícula <strong><code>not</code> vem ANTES de <code>to</code></strong>. Nunca depois.</p>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>✅ Correto</th><th>❌ Errado</th></tr>
+    <tr><td>She wore makeup <b>in order not to</b> look too plain.</td><td><span class="wrong">in order to not</span> look too plain.</td></tr>
+    <tr><td>Bob exercised <b>so as not to</b> have a big belly.</td><td><span class="wrong">so as to not</span> have a big belly.</td></tr>
+    <tr><td>Some celebrities go for a natural look <b>not to</b> follow beauty conventions.</td><td><span class="wrong">to not</span> follow beauty conventions.</td></tr>
+  </table>
+  </div>
+  <div class="box trap">
+    <div class="box-title">Pegadinha de prova</div>
+    A regra é "<strong>not antes de to</strong>": <em>in order <u>not to</u></em>, <em>so as <u>not to</u></em>, <em><u>not to</u></em>. Em inglês escrito formal, <em>"to not"</em> é considerado errado nessas construções. Bancas como FUVEST e UNESP testam isso com frequência.
+  </div>
+
+  <h3>3.4 — Developing Accuracy: propósito com <em>-ing</em></h3>
+  <p>Há ainda outro grupo de expressões de propósito. Atenção: depois delas, o verbo vai para a forma <strong>-ing</strong> (gerúndio), não o infinitivo!</p>
+  <div class="formula">
+    <b>with the intention of</b> &nbsp;/&nbsp; <b>with the objective of</b><br>
+    <b>with the aim of</b> &nbsp;/&nbsp; <b>for the purpose of</b> &nbsp; + &nbsp; <span class="pp">verbo + ing</span>
+  </div>
+  <p><em>"She talked slowly <strong>with the intention of / with the objective of / with the aim of / for the purpose of helping</strong> students understand her."</em></p>
+  <div class="box add">
+    <div class="box-title">Complemento para melhor compreensão</div>
+    A expressão <em>"aiming at"</em> (do exercício 5) segue a mesma lógica: <strong><em>aiming at</em> + verbo-ing</strong>. Resumo prático:<br>
+    • <code>to / in order to / so as to</code> → <strong>infinitivo</strong><br>
+    • <code>with the intention/aim/objective of</code>, <code>for the purpose of</code>, <code>aiming at</code> → <strong>verbo + -ing</strong><br>
+    • <code>so that</code> → <strong>oração completa</strong>
+  </div>
+
+  <h3>3.5 — Exercício 4 — Identifique e corrija os erros</h3>
+  <div class="ex">
+    <p class="q"><b>1.</b> "You need to meet high beauty standards in order become a model."</p>
+    <details><summary>Ver correção</summary><div class="ans">Falta o <code>to</code>: "...<b>in order to become</b> a model." A estrutura é <em>in order <u>to</u> + infinitivo</em>.</div></details>
+    <p class="q"><b>2.</b> "Some women wear makeup so to hide their imperfections."</p>
+    <details><summary>Ver correção</summary><div class="ans">"so to" não existe. Correção: "...<b>so as to hide</b> their imperfections" (ou simplesmente "...<b>to hide</b>...").</div></details>
+    <p class="q"><b>3.</b> "A lot of men go to the gym so that feel attractive."</p>
+    <details><summary>Ver correção</summary><div class="ans">Depois de <code>so that</code> precisa haver <em>sujeito + verbo</em>. Correção: "...<b>so that they feel</b> attractive" (ou "...<b>so as to feel</b> attractive").</div></details>
+    <p class="q"><b>4.</b> "It is important to build self-esteem in order not to be manipulated by the beauty industry."</p>
+    <details><summary>Ver correção</summary><div class="ans"><b>Esta frase já está CORRETA.</b> "in order not to be manipulated" usa perfeitamente a forma negativa (<em>not</em> antes de <em>to</em>). O exercício inclui uma frase certa para testar sua atenção — não há nada a corrigir.</div></details>
+  </div>
+
+  <h3>3.6 — Exercício 5 — Reescreva sem mudar o sentido</h3>
+  <p><b>Exemplo dado:</b> "...magazine aimed at reaching women. <em>(has the intention of)</em>" → "...magazine that <b>has the intention of reaching</b> women."</p>
+  <div class="ex">
+    <p class="q"><b>1.</b> "...women need to be slim to wear crop tops. <em>(so as to)</em>"</p>
+    <details><summary>Ver resposta</summary><div class="ans">"...women need to be slim <b>so as to wear</b> crop tops." (<em>so as to</em> + infinitivo)</div></details>
+    <p class="q"><b>2.</b> "A blogger started a social media campaign to defend women's right to choose what to wear. <em>(aiming at)</em>"</p>
+    <details><summary>Ver resposta</summary><div class="ans">"A blogger started a social media campaign <b>aiming at defending</b> women's right to choose what to wear." (<em>aiming at</em> + verbo-<b>ing</b>)</div></details>
+    <p class="q"><b>3.</b> "The #RockTheCrop movement called people's attention to promote a more body-positive message. <em>(with the objective of)</em>"</p>
+    <details><summary>Ver resposta</summary><div class="ans">"The #RockTheCrop movement called people's attention <b>with the objective of promoting</b> a more body-positive message." (<em>with the objective of</em> + verbo-<b>ing</b>)</div></details>
+  </div>
+
+  <div class="box exam">
+    <div class="box-title">O que mais cai em prova (Connectors)</div>
+    Vestibulares cobram conectores pedindo para <strong>reescrever uma frase sem mudar o sentido</strong> ou para <strong>escolher o conector correto</strong>. O erro nº 1 dos candidatos é misturar as estruturas: usar infinitivo depois de "with the aim of" (errado) ou esquecer o sujeito depois de "so that".
+  </div>
+
+  <div class="videos">
+    <h4>🎬 Vídeo recomendado — Conectores de propósito</h4>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=0JS-IKEGtS8" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Expressing Purpose: so as to, in order to, so that</b><small>English lesson — todas as estruturas de propósito explicadas com exemplos</small></span>
+      <span class="go">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== MODAL PERFECTS ===================== -->
+<section id="modals">
+  <span class="sec-num">// PARTE 4 — MODAL VERBS</span>
+  <h2>Modal Perfects</h2>
+  <p class="lead">Verbos modais no passado — usados para <em>especular, deduzir, criticar ou lamentar</em> sobre acontecimentos passados.</p>
+
+  <h3>4.1 — O que são</h3>
+  <p>Os <strong>modal perfects</strong> são formados por: <strong>verbo modal + auxiliar "have" + particípio passado</strong> do verbo principal. Eles falam de eventos passados <em>vistos do presente</em>. O modal escolhido revela a <strong>intenção do falante</strong>.</p>
+  <div class="formula">
+    MODAL + <b>have</b> + <span class="pp">particípio passado (past participle)</span><br>
+    <span style="font-size:.82rem;opacity:.85">ex: must have gone &nbsp;·&nbsp; should have left &nbsp;·&nbsp; might have known</span>
+  </div>
+
+  <h3>4.2 — Os significados (o coração do tópico)</h3>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Modal perfect</th><th>Significado</th><th>Exemplo do livro</th></tr>
+    <tr><td><code>may / might (not) have</code></td><td><strong>possibilidade</strong> incerta no passado ("pode ser que...")</td><td>Mark <b>may/might have gone</b> to gym. I'm not sure.</td></tr>
+    <tr><td><code>could have</code></td><td>possibilidade <strong>ou</strong> — muito comum — <strong>oportunidade perdida</strong></td><td>I <b>could have bought</b> a new phone when I was in Miami.</td></tr>
+    <tr><td><code>must have</code></td><td><strong>dedução lógica</strong> (quase certeza positiva)</td><td>Dorothy <b>must have reduced</b> her calories intake. She looks much thinner now.</td></tr>
+    <tr><td><code>can't / couldn't have</code></td><td>dedução lógica <strong>negativa</strong> ("é impossível que...")</td><td>Ten kilos in one month? You <b>can't/couldn't have lost</b> so much weight so fast!</td></tr>
+    <tr><td><code>should (not) have</code></td><td><strong>crítica / arrependimento</strong> ou ação que <em>era esperada</em></td><td>I <b>should not have worn</b> that outfit. Now it's too late. (crítica)<br>The babysitter <b>should have arrived</b> by now. (expectativa)</td></tr>
+  </table>
+  </div>
+
+  <div class="box key">
+    <div class="box-title">Conceito-chave: o "termômetro de certeza"</div>
+    <div class="diagram">CERTEZA NEGATIVA ◀──────────── INCERTEZA ────────────▶ CERTEZA POSITIVA
+
+can't/couldn't have      may / might / could have       must have
+"é impossível            "talvez tenha..."              "com certeza
+ que tenha..."           (só uma possibilidade)          aconteceu"</div>
+    <p>E, à parte do termômetro, fica <strong>should have</strong>, que não mede certeza — mede <em>julgamento</em>: o que <em>era certo</em> fazer (e não foi feito) ou o que <em>era esperado</em>.</p>
+  </div>
+
+  <div class="box trap">
+    <div class="box-title">Pegadinha de prova</div>
+    <ul>
+      <li><strong>"must have"</strong> ≠ obrigação. No passado, <em>must have</em> = <em>dedução</em> ("deve ter acontecido"), nunca "teve que".</li>
+      <li>A negativa de dedução de <em>must have</em> é <strong>can't/couldn't have</strong> — e <u>não</u> "mustn't have".</li>
+      <li><strong>"could have done"</strong> normalmente indica algo que <em>era possível mas não aconteceu</em> (oportunidade perdida): "I could have eaten more healthy food, but I didn't."</li>
+      <li>Depois do modal, vem sempre <strong>have + particípio</strong> — nunca "has" nem "had". É sempre <em>have</em>.</li>
+    </ul>
+  </div>
+
+  <h3>4.3 — Exercício 5 — Complete com as expressões do quadro</h3>
+  <p>Quadro: <em>could have eaten · must have taken · couldn't have done · shouldn't have had · might have changed · shouldn't have participated</em> (há uma sobrando).</p>
+  <div class="ex">
+    <p class="q"><b>1.</b> "Seven-year-old girls ______ in the beauty pageant. They were too young and vulnerable to be exposed like that."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>shouldn't have participated.</b> É uma <em>crítica</em>: elas não deveriam ter participado.</div></details>
+    <p class="q"><b>2.</b> "Those athletes ______ something to look so muscular. It's impossible to build up so much muscle this quickly."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>must have taken.</b> <em>Dedução lógica</em>: com certeza tomaram alguma substância.</div></details>
+    <p class="q"><b>3.</b> "Kate ______ liposuction because it was too risky for her age."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>couldn't have done.</b> Dedução <em>negativa</em>: era arriscado demais, então é impossível que ela tenha feito.</div></details>
+    <p class="q"><b>4.</b> "I ______ more healthy food, but I decided not to because it was Christmas time."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>could have eaten.</b> <em>Oportunidade perdida</em>: eu poderia ter comido, mas escolhi não comer.</div></details>
+    <p class="q"><b>5.</b> "Priscila ______ her clothes before she got on stage. I don't think she was wearing that dress before."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>might have changed.</b> <em>Possibilidade</em> incerta: talvez ela tenha trocado de roupa.</div></details>
+    <p class="q"><b>Sobra:</b> <em>shouldn't have had</em> (não é usada).</p>
+  </div>
+
+  <h3>4.4 — Exercício 6 — Complete com o modal perfect (use as pistas)</h3>
+  <p><b>Exemplo:</b> "Why are you late again, Ian? You <u>should have left</u> earlier. <em>(should – leave)</em>"</p>
+  <div class="ex">
+    <p class="q"><b>1.</b> "Clara didn't use to spend so much money. She ______ that it was so expensive. <em>(might not – know)</em>"</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>might not have known.</b> Possibilidade negativa: talvez ela não soubesse.</div></details>
+    <p class="q"><b>2.</b> "Lisa's dress is very fancy. She ______ a fortune on it. <em>(must – spend)</em>"</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>must have spent.</b> Dedução: ela com certeza gastou uma fortuna.</div></details>
+    <p class="q"><b>3.</b> "You stayed indoors for too long last Saturday. You ______ swimming. It was such a beautiful sunny day! <em>(could – go)</em>"</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>could have gone.</b> Oportunidade perdida: você poderia ter ido nadar.</div></details>
+    <p class="q"><b>4.</b> "You ______ to go out without asking your parents' permission first. <em>(should not – accept)</em>"</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>shouldn't have accepted</b> (= should not have accepted). Crítica a uma atitude passada.</div></details>
+  </div>
+
+  <h3>4.5 — Exercício 7 — Corrija os erros do fórum</h3>
+  <p>O fórum debate: <em>"Do boys face as much pressure as girls to look pretty?"</em></p>
+  <div class="ex">
+    <p class="q"><b>Post de BBx:</b> "...I tried so hard to get stronger, but people still say <u>I may have worked out more</u>."</p>
+    <details><summary>Ver correção</summary><div class="ans"><b>I should have worked out more.</b> O sentido pretendido é de <em>crítica</em> ("deveria ter malhado mais"), não de possibilidade. Logo, o modal correto é <em>should have</em>, não <em>may have</em>.</div></details>
+    <p class="q"><b>Post de Pattyjojo (a):</b> "...I was astonished to notice that <u>one of my classmates had liposuction</u>."</p>
+    <details><summary>Ver correção</summary><div class="ans"><b>...one of my classmates had had liposuction.</b> A lipoaspiração aconteceu <em>antes</em> de ela perceber → exige <strong>past perfect</strong> (<em>had had</em>). <em>(Isto conecta com a Parte 5!)</em></div></details>
+    <p class="q"><b>Post de Pattyjojo (b):</b> "<u>Her family might have gone crazy</u> to let her do it!"</p>
+    <details><summary>Ver correção</summary><div class="ans"><b>Her family must have gone crazy.</b> A falante faz uma <em>dedução forte/julgamento</em> ("a família só pode ter enlouquecido"), não uma possibilidade incerta. O modal correto é <em>must have</em>.</div></details>
+  </div>
+
+  <div class="box exam">
+    <div class="box-title">O que mais cai em prova (Modal Perfects)</div>
+    A banca dá um <em>contexto</em> e pede o modal certo. A chave é ler a <strong>intenção</strong>: há prova/evidência forte? → <em>must have</em>. É impossível? → <em>can't/couldn't have</em>. É só um palpite? → <em>may/might have</em>. Houve arrependimento ou crítica? → <em>should have</em>. Era possível mas não aconteceu? → <em>could have</em>.
+  </div>
+
+  <div class="videos">
+    <h4>🎬 Vídeos recomendados — Modal Perfects</h4>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=3YA-l9_6ykU" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Perfect Modals — o que são e como usar</b><small>Aula completa sobre modal + have + particípio</small></span>
+      <span class="go">↗</span>
+    </a>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=osLlaolQJD0" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Como aprender a usar o Modal Perfect</b><small>Explicação prática com exemplos traduzidos</small></span>
+      <span class="go">↗</span>
+    </a>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=W0PSvGUDqDI" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Modal Verbs: revisão completa para o ENEM</b><small>Curso Enem Gratuito — base de verbos modais</small></span>
+      <span class="go">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== PAST PERFECT ===================== -->
+<section id="tenses">
+  <span class="sec-num">// PARTE 5 — VERB TENSES</span>
+  <h2>Past Perfect</h2>
+  <p class="lead">O "passado do passado" — usado para mostrar que uma ação aconteceu <em>antes</em> de outra ação passada.</p>
+
+  <h3>5.1 — O que é e para que serve</h3>
+  <p>O <strong>past perfect</strong> é formado por <strong>had + particípio passado</strong> do verbo principal. Ele indica uma ação que <em>já tinha acontecido</em> (ou estava completa) <strong>antes</strong> de outro momento ou ação no passado.</p>
+  <div class="formula">
+    sujeito + <b>had</b> + <span class="pp">particípio passado</span><br>
+    <span style="font-size:.82rem;opacity:.85">negativa: had + not (hadn't) &nbsp;·&nbsp; pergunta: Had + sujeito...?</span>
+  </div>
+  <div class="box key">
+    <div class="box-title">Conceito-chave: a linha do tempo</div>
+    <div class="diagram">PASSADO MAIS DISTANTE          PASSADO RECENTE              AGORA
+      (past perfect)            (simple past)
+─────────●──────────────────────────●──────────────────────────▶
+   "my friends had left"      "When I arrived"
+   (aconteceu PRIMEIRO)       (aconteceu DEPOIS)</div>
+    <p><em>"When I arrived at the gallery, all my friends <b>had left</b>."</em><br>→ Os amigos saíram <strong>antes</strong> de eu chegar. Eu cheguei e o salão estava vazio.</p>
+  </div>
+  <p>Outros exemplos do livro:</p>
+  <ul>
+    <li><em>"I looked very tired yesterday because I <b>hadn't slept</b> well."</em> (não dormir bem veio antes de parecer cansado)</li>
+    <li><em>"<b>Had you arrived</b> when the journalist gave her speech?"</em> (pergunta no past perfect)</li>
+  </ul>
+
+  <div class="box trap">
+    <div class="box-title">Pegadinha de prova: past perfect × simple past × present perfect</div>
+    <ul>
+      <li><strong>Simple past</strong> — ação concluída no passado, momento definido: <em>"I arrived."</em></li>
+      <li><strong>Past perfect</strong> — ação anterior a <em>outra</em> ação passada: <em>"I had arrived (before something else)."</em></li>
+      <li><strong>Present perfect</strong> — ligação com o <em>presente</em>: <em>"I have arrived."</em></li>
+    </ul>
+    Erro clássico: usar <em>present perfect</em> ("I've finished") num contexto totalmente passado. Se a frase já está no passado, o "passado do passado" é <strong>had finished</strong>, nunca "have finished".
+  </div>
+
+  <h3>5.2 — Exercício 1 — Sublinhe a oração da ação que aconteceu PRIMEIRO</h3>
+  <p>Regra de ouro: a oração no <strong>past perfect</strong> é sempre a da ação que aconteceu <em>primeiro</em>.</p>
+  <div class="ex">
+    <p class="q"><b>1.</b> Ian <u>had never had</u> cosmetic surgery / before he joined the band.</p>
+    <details><summary>Ver resposta</summary><div class="ans">Sublinhe: <b>"Ian had never had cosmetic surgery"</b> (past perfect). Esse estado é anterior a "joined the band".</div></details>
+    <p class="q"><b>2.</b> Sophie <u>had finished</u> her training / when I arrived.</p>
+    <details><summary>Ver resposta</summary><div class="ans">Sublinhe: <b>"Sophie had finished her training"</b>. Ela terminou o treino antes de eu chegar.</div></details>
+    <p class="q"><b>3.</b> Thomas chose Mark for the job / because he <u>had worked</u> for a big company.</p>
+    <details><summary>Ver resposta</summary><div class="ans">Sublinhe: <b>"he had worked for a big company"</b>. Trabalhar na empresa veio antes da escolha.</div></details>
+    <p class="q"><b>4.</b> Tina <u>had read</u> the book / but she left the questionnaire at home.</p>
+    <details><summary>Ver resposta</summary><div class="ans">Sublinhe: <b>"Tina had read the book"</b>. A leitura ocorreu antes de ela sair de casa.</div></details>
+    <p class="q"><b>5.</b> Nobody knew / that Fanny <u>had had</u> a nose job.</p>
+    <details><summary>Ver resposta</summary><div class="ans">Sublinhe: <b>"that Fanny had had a nose job"</b>. A cirurgia de nariz aconteceu antes de "nobody knew".</div></details>
+  </div>
+
+  <h3>5.3 — Exercício 2 — Una as metades</h3>
+  <div class="ex">
+    <p class="q"><b>1.</b> "When Sophie left the restaurant," → ?</p>
+    <p class="q"><b>2.</b> "Sam's dance performance was outstanding" → ?</p>
+    <p class="q"><b>3.</b> "Simon was on a very strict diet" → ?</p>
+    <p class="q"><b>4.</b> "When I was born," → ?</p>
+    <details><summary>Ver respostas</summary><div class="ans">
+      <b>1</b> → "all the other customers <b>had</b> already <b>left</b>." (eles saíram antes de Sophie)<br>
+      <b>2</b> → "because he <b>had danced</b> professionally in his teens." (a experiência veio antes)<br>
+      <b>3</b> → "because he <b>had put</b> on a lot of weight." (engordou antes da dieta)<br>
+      <b>4</b> → "my mom <b>had</b> already <b>won</b> two beauty pageants." (ela venceu antes do meu nascimento)
+    </div></details>
+  </div>
+
+  <h3>5.4 — Exercício 3 — Circule a opção correta</h3>
+  <div class="ex">
+    <p class="q"><b>1.</b> "I <i>enjoyed / had enjoyed</i> reading about Rich Guidotti. I <i>never heard / had never heard</i> of him before."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>enjoyed</b> (simple past) / <b>had never heard</b> (past perfect — anterior, reforçado por "before").</div></details>
+    <p class="q"><b>2.</b> "When I <i>had seen / saw</i> Tom, I could barely recognize him. He <i>had lost / has lost</i> a lot of weight!"</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>saw</b> (simple past) / <b>had lost</b> (past perfect — emagrecer veio antes de eu vê-lo).</div></details>
+    <p class="q"><b>3.</b> "When I <i>had gotten / got</i> to the stadium, the game <i>hadn't started / didn't start</i> yet."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>got</b> (simple past) / <b>hadn't started</b> (past perfect — combina com "yet").</div></details>
+    <p class="q"><b>4.</b> "They <i>had suffered / did suffer</i> discrimination because of their appearance, so they <i>had known / knew</i> how to deal with bullying."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>had suffered</b> (past perfect — veio antes) / <b>knew</b> (simple past — resultado/consequência).</div></details>
+  </div>
+
+  <h3>5.5 — Exercício 4 — Encontre e corrija os erros</h3>
+  <div class="ex">
+    <p class="q"><b>1.</b> "Beatrice was too late for the party. When she arrived, everybody left."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>ERRO.</b> Correção: "...everybody <b>had left</b>." Todos saíram antes de ela chegar → past perfect.</div></details>
+    <p class="q"><b>2.</b> "When Adele released 25 in 2015, she'd already become one of the world's best-selling artists."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>CORRETA.</b> "she'd already become" (= she had already become) é past perfect, perfeitamente usado.</div></details>
+    <p class="q"><b>3.</b> "We were taken aback when my brother said he had a nose job."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>ERRO.</b> Correção: "...he <b>had had</b> a nose job." A cirurgia ocorreu antes de ele contar → past perfect.</div></details>
+    <p class="q"><b>4.</b> "When the magazine was published, Marcus discovered his photos had been Photoshopped."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>CORRETA.</b> "had been Photoshopped" é past perfect na voz passiva — uso correto (a edição veio antes da descoberta).</div></details>
+    <p class="q"><b>5.</b> "By the time she came in, I've already finished my makeup."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>ERRO.</b> Correção: "...I <b>had</b> already <b>finished</b> my makeup." O contexto é passado ("by the time she came in"), então não cabe present perfect.</div></details>
+    <p class="q"><b>6.</b> "I was really excited. It was the first time I've been to a fashion show."</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>ERRO.</b> Correção: "...the first time I <b>had been</b> to a fashion show." Contexto passado → past perfect. (Regra: "It was the first time + past perfect".)</div></details>
+    <p class="q"><b>7.</b> "I went on a diet last year and it was really painful. I'd never felt so weak in my whole life!"</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>CORRETA.</b> "I'd never felt" (= I had never felt) é past perfect, usado corretamente.</div></details>
+    <p class="q"><b>8.</b> "Had they arrived before you had your surgery?"</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>CORRETA.</b> "Had they arrived...?" é pergunta no past perfect; depois de "before" o simple past ("you had your surgery") é aceitável. Sem erro.</div></details>
+  </div>
+  <div class="box add">
+    <div class="box-title">Complemento para melhor compreensão</div>
+    Marcadores que pedem ou combinam muito com o past perfect: <strong>before, after, by the time, already, just, never, when</strong> e a estrutura <strong>"It was the first time..."</strong>. Quando você vir uma frase passada com um desses marcadores ligando duas ações, desconfie: provavelmente a ação anterior vai para o past perfect.
+  </div>
+
+  <div class="box exam">
+    <div class="box-title">O que mais cai em prova (Past Perfect)</div>
+    Vestibulares testam o past perfect pedindo para <strong>ordenar acontecimentos</strong> ("o que aconteceu primeiro?") ou para <strong>completar/corrigir frases</strong>. Lembre-se: o past perfect quase nunca aparece sozinho — ele existe <em>em relação a</em> outra ação no simple past. É a estrutura que organiza a cronologia da narrativa.
+  </div>
+
+  <div class="videos">
+    <h4>🎬 Vídeos recomendados — Past Perfect</h4>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=6mfpZz8LD14" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>HAD HAD é possível? Entenda o Past Perfect</b><small>English in Brazil — aula completa sobre o tempo verbal</small></span>
+      <span class="go">↗</span>
+    </a>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=VCdkk7tkOpg" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Past Perfect — Resumo de Inglês para o Enem</b><small>Revisão objetiva voltada para a prova</small></span>
+      <span class="go">↗</span>
+    </a>
+    <a class="vbtn" href="https://www.youtube.com/watch?v=5CTDGCC20Lc" target="_blank" rel="noopener">
+      <span class="yt">▶ YT</span>
+      <span class="vtxt"><b>Aprenda o Past Perfect com 10 frases</b><small>Aula prática da playlist de tempos verbais</small></span>
+      <span class="go">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== STUDY SKILLS ===================== -->
+<section id="study">
+  <span class="sec-num">// PARTE 6 — STUDY SKILLS</span>
+  <h2>Using Monolingual Dictionaries</h2>
+  <p class="lead">Como aproveitar ao máximo um dicionário inglês–inglês — uma ferramenta-chave para a leitura crítica.</p>
+
+  <h3>6.1 — Por que usar um dicionário monolíngue?</h3>
+  <p>O significado de uma palavra <strong>varia conforme o contexto</strong>. A página 38 abre com um exemplo perfeito: a palavra <em>"type"</em> tem sentidos diferentes em <em>"I can type very fast"</em> (verbo: digitar) e em <em>"He said the girl was not his type"</em> (substantivo: tipo de pessoa). Um dicionário inglês–inglês ajuda a descobrir <em>qual</em> sentido está em jogo.</p>
+
+  <h3>6.2 — O que todo dicionário inglês–inglês traz</h3>
+  <ul>
+    <li><strong>Transcrição fonética</strong> — mostra como a palavra é pronunciada.</li>
+    <li><strong>Classe gramatical (part of speech)</strong> — se a palavra é substantivo, verbo, adjetivo etc. Uma mesma palavra pode ter várias classes, e o dicionário explica cada significado.</li>
+    <li><strong>Frases de exemplo</strong> — mostram a palavra em uso real, em um contexto.</li>
+    <li><strong>Provérbios e citações</strong> — ajudam quando a linguagem é figurada.</li>
+  </ul>
+
+  <div class="box tip">
+    <div class="box-title">Estratégia quando você não sabe o significado</div>
+    <ol>
+      <li>Descubra a <strong>classe gramatical</strong> e a <strong>função</strong> da palavra na frase (é advérbio? substantivo? verbo?).</li>
+      <li>Procure a palavra no dicionário e veja se o sentido <em>como aquela classe</em> faz sentido no contexto.</li>
+      <li>Se não fizer, verifique os significados em <em>outras classes gramaticais</em> até achar o que encaixa.</li>
+    </ol>
+  </div>
+
+  <h3>6.3 — Anatomia de um verbete (a entrada "type")</h3>
+  <p>Veja como ler cada parte de uma entrada de dicionário:</p>
+  <div class="dict">
+    <div class="dline">
+      <span style="font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--teal-d)">type</span>
+      <span style="font-family:'DM Mono',monospace;color:var(--gold)">/taɪp/</span>
+      <span class="label">transcrição fonética</span>
+    </div>
+    <div class="dline"><b>noun, verb</b> <span class="label">classe(s) gramatical(is)</span></div>
+    <hr style="border:none;border-top:1px dashed var(--line);margin:6px 0">
+    <div class="dline"><b style="color:var(--rose)">noun:</b> a group of people or things that share similar characteristics</div>
+    <div class="dline"><i>"There are some specific types of clothes you can wear to the wedding."</i> <span class="label">frase de exemplo</span></div>
+    <div class="dline"><b style="color:var(--rose)">be somebody's type:</b> to be the kind of person somebody is attracted to <span class="label">expressão com a palavra</span></div>
+    <hr style="border:none;border-top:1px dashed var(--line);margin:6px 0">
+    <div class="dline"><b style="color:var(--rose)">verb:</b> to write using a computer keyboard</div>
+    <div class="dline"><i>"My boss asked me to type a couple of e-mails."</i> <span class="label">frase de exemplo</span></div>
+  </div>
+  <div class="box add">
+    <div class="box-title">Complemento para melhor compreensão</div>
+    Essa habilidade é diretamente útil em prova: ao encontrar uma palavra desconhecida num texto, <strong>identificar a classe gramatical</strong> (pela posição na frase) já elimina sentidos errados — mesmo sem um dicionário em mãos. É a mesma lógica do "Learning from Context" da Parte 1.
+  </div>
+</section>
+
+<!-- ===================== REVISÃO ===================== -->
+<section id="revisao">
+  <span class="sec-num">// PARTE 7 — REVISÃO FINAL &amp; AUTOTESTE</span>
+  <h2>Revisão Final</h2>
+  <p class="lead">Os conceitos essenciais da Unidade 3, condensados — e um autoteste para você se avaliar.</p>
+
+  <h3>7.1 — Mapa-resumo da unidade</h3>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Tópico</th><th>Ideia central</th><th>Não esqueça</th></tr>
+    <tr><td><b>Reading</b></td><td>Beleza é construção social; fato × opinião</td><td>Opinião = adjetivos, modais, "I think"; Fato = nomes, datas, dados</td></tr>
+    <tr><td><b>Vocabulary</b></td><td>Expressões idiomáticas de aparência</td><td><i>fit the mold, dressed to kill, larger than life, well-built</i> — sentido não literal</td></tr>
+    <tr><td><b>Connectors</b></td><td>Conjunções de propósito</td><td><i>to/in order to/so as to</i> + infinitivo; <i>so that</i> + oração; <i>aim/intention of</i> + -ing; <b>not</b> antes de <b>to</b></td></tr>
+    <tr><td><b>Modal Perfects</b></td><td>Modal + have + particípio</td><td><i>must have</i> = dedução; <i>can't have</i> = impossível; <i>may/might have</i> = talvez; <i>should have</i> = crítica; <i>could have</i> = oportunidade perdida</td></tr>
+    <tr><td><b>Past Perfect</b></td><td>had + particípio = passado do passado</td><td>Marca a ação que aconteceu PRIMEIRO, em relação a outra ação no simple past</td></tr>
+    <tr><td><b>Study Skills</b></td><td>Dicionário monolíngue</td><td>Traz fonética, classe gramatical, exemplos; identifique a classe da palavra primeiro</td></tr>
+  </table>
+  </div>
+
+  <div class="divider-quote">"This is about people. This is about humanity. Nothing's changed." — Rick Guidotti</div>
+
+  <h3>7.2 — Autoteste rápido</h3>
+  <div class="ex">
+    <p class="q"><b>1.</b> Reescreva com "so as to": <i>"She studies hard to pass the exam."</i></p>
+    <details><summary>Ver resposta</summary><div class="ans">"She studies hard <b>so as to pass</b> the exam."</div></details>
+
+    <p class="q"><b>2.</b> Complete: <i>"The streets are wet. It ______ (rain) last night."</i> (dedução)</p>
+    <details><summary>Ver resposta</summary><div class="ans">"It <b>must have rained</b> last night." (dedução lógica → <i>must have</i> + particípio)</div></details>
+
+    <p class="q"><b>3.</b> Corrija: <i>"When the show started, we already found our seats."</i></p>
+    <details><summary>Ver resposta</summary><div class="ans">"When the show started, we <b>had</b> already <b>found</b> our seats." (a ação anterior vai para o past perfect)</div></details>
+
+    <p class="q"><b>4.</b> Fato ou opinião? <i>"In my opinion, this is the most beautiful photo of all."</i></p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>Opinião.</b> Marcadores claros: "In my opinion" + o superlativo avaliativo "most beautiful".</div></details>
+
+    <p class="q"><b>5.</b> Negative purpose — corrija: <i>"He whispered so as to not wake the baby."</i></p>
+    <details><summary>Ver resposta</summary><div class="ans">"He whispered <b>so as not to</b> wake the baby." (<i>not</i> vem antes de <i>to</i>)</div></details>
+
+    <p class="q"><b>6.</b> O que significa <i>"to peruse"</i>?</p>
+    <details><summary>Ver resposta</summary><div class="ans">Ler ou examinar algo <b>com atenção e detalhe</b> — não é folhear rapidamente.</div></details>
+
+    <p class="q"><b>7.</b> Complete com o modal correto: <i>"You ______ (tell) me the truth! I trusted you."</i> (crítica/arrependimento)</p>
+    <details><summary>Ver resposta</summary><div class="ans">"You <b>should have told</b> me the truth!" (crítica → <i>should have</i> + particípio)</div></details>
+
+    <p class="q"><b>8.</b> Qual a expressão para "encaixar-se no padrão esperado"?</p>
+    <details><summary>Ver resposta</summary><div class="ans"><b>to fit the mold.</b></div></details>
+  </div>
+
+  <div class="box key">
+    <div class="box-title">Conexão final entre os tópicos</div>
+    Repare como a gramática da unidade serve ao tema: <strong>Conjunctions of purpose</strong> explicam <em>por que</em> as pessoas seguem padrões de beleza ("she wore makeup <em>in order not to</em> look plain"); <strong>Modal perfects</strong> permitem <em>julgar</em> escolhas passadas ("the girls <em>shouldn't have participated</em>"); e o <strong>Past perfect</strong> organiza a narrativa de transformação de Rick Guidotti ("he <em>had used</em> the same style with Cindy Crawford"). Gramática e leitura não são mundos separados — são a mesma língua.
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<footer>
+  <p><b>Inglês — Unidade 3: Pretty Matters</b></p>
+  <p>Aula completa gerada a partir das páginas 32–38 do Student's Book.</p>
+  <p style="margin-top:10px;font-size:.82rem;opacity:.8">Conteúdo principal extraído das imagens enviadas. Trechos marcados como "Complemento para melhor compreensão" foram acrescentados para apoiar o estudo. Os vídeos do YouTube foram selecionados a partir de buscas atuais em canais reconhecidos; se algum link estiver indisponível, pesquise pelo título indicado.</p>
+</footer>
+
+<button id="top" aria-label="Voltar ao topo">↑</button>
+
+<script>
+// Progress bar
+const bar=document.getElementById('progress');
+const topBtn=document.getElementById('top');
+function onScroll(){
+  const h=document.documentElement;
+  const scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  bar.style.width=scrolled+'%';
+  topBtn.classList.toggle('show',h.scrollTop>500);
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+
+// Back to top
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Active nav link via IntersectionObserver
+const navLinks=[...document.querySelectorAll('nav a')];
+const ids=navLinks.map(a=>a.getAttribute('href').slice(1));
+const sections=ids.map(id=>document.getElementById(id)).filter(Boolean);
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.remove('active'));
+      const link=navLinks.find(a=>a.getAttribute('href')==='#'+e.target.id);
+      if(link)link.classList.add('active');
+    }
+  });
+},{rootMargin:'-45% 0px -50% 0px'});
+sections.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
